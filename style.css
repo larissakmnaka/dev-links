@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #393232; 
+  --background: #C18B89;
+  --border-color: rgba(0, 0, 0, 0.5);
+  --list-bg: rgba(0, 0, 0, 0.05);
+  --list-bg-hover: rgba(0, 0, 0, 0.02);
+  --links-bg-hover: rgba(0, 0, 0, 0.1);
+  --switch: url(assets/moon.svg);
+}
+
+.light {
+  --text-color: white; 
+  --background: #CDA19B;
+  --border-color: rgba(255, 255, 255, 0.5);
+  --list-bg: rgba(255, 255, 255, 0.05);
+  --list-bg-hover: rgba(255, 255, 255, 0.02);
+  --links-bg-hover: rgba(255, 255, 255, 0.1);
+  --switch: url(assets/sun.svg);
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color); 
+}
+
+/* fundo */
+body {
+  background: var(--background) no-repeat top center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centralizar-itens {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* perfil */
+#profile img {
+  display: block;
+  margin: 60px 0 10px 0;
+  width: 112px;
+  border-radius: 50%;
+}
+
+/* nome */
+h1 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  margin-top: 10px;
+}
+
+/* descrição */
+p {
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 5px;
+}
+
+/* links */
+ul {
+  list-style: none;
+  margin: 30px auto 0;
+  width: 100%;
+  max-width: 540px;
+  gap: 24px;
+}
+
+li {
+  width: 100%;
+}
+
+ul li a {
+  display: block;
+
+  background: var(--list-bg);
+  transition: background 0.2s;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  padding: 16px 0;
+
+  text-align: center;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background: var(--list-bg-hover);
+  border: 1px solid var(--text-color);
+}
+
+/* switch */
+#switch {
+  position: relative;
+}
+
+#switch button {
+  width: 30px;
+  height: 30px;
+  background: white var(--switch) no-repeat center;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  right: 0;
+}
+
+.light #switch button {
+  right: initial;
+  left: 0;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--list-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+}
+
+/* ícones */
+#social-links {
+  display: flex;
+  padding: 40px 0;
+  font-size: 32px;
+  }
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  border-radius: 50%;
+  padding: 16px;
+}
+
+#social-links a:hover{
+  background: var(--links-bg-hover);
+}
+
+footer {
+  font-size: 12px;
+}
