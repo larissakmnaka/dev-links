@@ -102,6 +102,7 @@ ul li a:hover {
 /* switch */
 #switch {
   position: relative;
+  margin-top: 25px;
 }
 
 #switch button {
@@ -114,12 +115,18 @@ ul li a:hover {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  right: 0;
+}
+
+html:not(.light) #switch button {
+  animation: slide-in 0.2s forwards;
 }
 
 .light #switch button {
-  right: initial;
-  left: 0;
+  animation: slide-out 0.2s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--links-bg-hover);
 }
 
 #switch span {
@@ -153,4 +160,23 @@ ul li a:hover {
 
 footer {
   font-size: 12px;
+}
+
+/* Animação */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 55%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 55%;
+  }
+  to {
+    left: 0;
+  }
 }
